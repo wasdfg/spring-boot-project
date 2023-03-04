@@ -1,7 +1,7 @@
 package com.wasd.book.springboot.domain.user;
 
 import com.wasd.book.springboot.domain.BaseTimeEntity;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

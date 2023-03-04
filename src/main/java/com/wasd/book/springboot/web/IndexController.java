@@ -9,20 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import jakarta.servlet.http.HttpSession;
-import org.springframework.web.bind.annotation.RestController;
+import javax.servlet.http.HttpSession;
 
-
-@Controller
 @RequiredArgsConstructor
+@Controller
 public class IndexController {
     private final PostsService postsService;
     private final HttpSession httpSession;
-
-    @GetMapping("/posts/save")
-    public String postsSave(){
-        return "posts-save";
-    }
 
     @GetMapping("/")
     public String index(Model model){
@@ -32,8 +25,12 @@ public class IndexController {
         if(user != null){
             model.addAttribute("userName",user.getName());
         }
-
         return "index";
+    }
+
+    @GetMapping("/posts/save")
+    public String postsSave(){
+        return "posts-save";
     }
 
     @GetMapping("/posts/update/{id}")
