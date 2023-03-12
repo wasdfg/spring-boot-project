@@ -1,4 +1,6 @@
-using spring boot 2.7.5
+스프링 부트 3.0.x 버전에서 구현하고 싶은 사람들의 에러 해결을 조금이라도 돕기 위해서 쓴 글
+
+spring boot 3.0.2
 using sdk 17
 gradle version 7.5.1
 ---------uploading-------------------
