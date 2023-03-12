@@ -29,7 +29,8 @@ gradle version 7.5.1
 에러내용 : org.springframework.dao.DataIntegrityViolationException: not-null property references a null or transient value
 원인 : google은 attribute.get()을 써서 값을 받아오지만 naver는 response를 써서 값을 받아온다. 오타였다.
 
+
 4.naver로 로그인 후 글 작성시 500에러를 반환
 에러 내용 :No key, method or field with name 'modifiedDate' on line 35] with root cause
-h2-console로 확인했을 때 CREATED_DATE  	MODIFIED_DATE 이 null로 반환 되는 것을 확인
+원인 : h2-console로 확인했을 때 CREATED_DATE  	MODIFIED_DATE 이 null로 반환 되는 것을 확인
 application.java에 @EnableJpaAuditing를 추가
