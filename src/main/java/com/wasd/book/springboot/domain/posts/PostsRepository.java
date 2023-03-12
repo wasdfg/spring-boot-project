@@ -1,6 +1,5 @@
 package com.wasd.book.springboot.domain.posts;
 
-import com.wasd.book.springboot.domain.posts.Posts;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

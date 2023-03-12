@@ -1,8 +1,7 @@
 package com.wasd.book.springboot.domain;
 
-
-import javax.persistence.EntityListeners;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.EntityListeners;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;

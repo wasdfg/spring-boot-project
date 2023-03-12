@@ -1,15 +1,24 @@
 package com.wasd.book.springboot.domain.user;
 
 import com.wasd.book.springboot.domain.BaseTimeEntity;
-import javax.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import lombok.NoArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class User extends BaseTimeEntity {
+@DynamicUpdate
+public class Users extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,14 +37,14 @@ public class User extends BaseTimeEntity {
     private Role role;
 
     @Builder
-    public User(String name,String email,String picture,Role role){
+    public Users(String name, String email, String picture, Role role){
         this.name = name;
         this.email = email;
         this.picture = picture;
         this.role = role;
     }
 
-    public User update(String name,String picture){
+    public Users update(String name,String picture){
         this.name = name;
         this.picture = picture;
 
@@ -45,4 +54,5 @@ public class User extends BaseTimeEntity {
     public String getRoleKey(){
         return this.role.getKey();
     }
+
 }
