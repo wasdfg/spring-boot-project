@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.data.jpa.mapping.JpaMetamodelMappingContext;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -12,13 +17,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
+@MockBean(JpaMetamodelMappingContext.class)
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(HelloController.class)
+@WebMvcTest(controllers = HelloController.class,excludeFilters = {
+        @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE,classes = SecurityException.class)
+})
 public class HelloControllerTest {
     @Autowired
     private MockMvc mvc;
 
     @Test
+    @WithMockUser(roles="USER")
     public void HelloIsReturn() throws Exception{
         String hello = "hello";
         mvc.perform(get("/hello"))
@@ -27,6 +36,7 @@ public class HelloControllerTest {
     }
 
     @Test
+    @WithMockUser(roles="USER")
     public void HelloDtoIsReturn() throws Exception{
         String name = "hello";
         int amount = 1000;

@@ -1,4 +1,4 @@
-package com.wasd.book.springboot.web.domain.posts;
+package com.wasd.book.springboot.domain.posts;
 
 import com.wasd.book.springboot.domain.posts.Posts;
 import com.wasd.book.springboot.domain.posts.PostsRepository;

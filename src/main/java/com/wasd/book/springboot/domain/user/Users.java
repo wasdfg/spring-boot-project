@@ -12,12 +12,10 @@ import jakarta.persistence.Id;
 import lombok.NoArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import org.hibernate.annotations.DynamicUpdate;
 
 @Getter
 @NoArgsConstructor
 @Entity
-@DynamicUpdate
 public class Users extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
