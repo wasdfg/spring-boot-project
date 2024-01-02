@@ -1,3 +1,6 @@
+웹 사이트 주소
+http://ec2-13-124-18-162.ap-northeast-2.compute.amazonaws.com:8080
+
 스프링 부트 3.1.x 버전에서 구현하고 싶은 사람들의 에러 해결을 조금이라도 돕기 위해서 쓴 글
 
 spring boot 3.1.7
