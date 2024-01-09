@@ -1,4 +1,5 @@
 var main = {
+
     init : function(){
     let _this = this;
     $('#btn-save').on('click',function(){ _this.save();});
