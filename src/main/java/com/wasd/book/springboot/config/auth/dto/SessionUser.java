@@ -11,6 +11,8 @@ public class SessionUser implements Serializable {
     private String email;
     private String picture;
 
+    private String userName;
+
     SessionUser(){
 
     }
@@ -18,5 +20,6 @@ public class SessionUser implements Serializable {
         this.name = users.getName();
         this.email = users.getEmail();
         this.picture = users.getPicture();
+        this.userName = users.getUserName();
     }
 }
