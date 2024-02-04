@@ -31,23 +31,24 @@ public class Users extends BaseTimeEntity {
     private String picture;
 
     @Column
-    private String userName;
+    private String nickname;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
     @Builder
-    public Users(String name, String email, String picture,String userName,Role role){
+    public Users(String name, String email, String picture,String nickname,Role role){
         this.name = name;
         this.email = email;
         this.picture = picture;
-        this.userName = userName;
+        this.nickname = nickname;
         this.role = role;
     }
 
-    public Users update(String name,String picture){
+    public Users update(String name,String picture,String nickname){
         this.name = name;
+        this.nickname = nickname;
         this.picture = picture;
 
         return this;

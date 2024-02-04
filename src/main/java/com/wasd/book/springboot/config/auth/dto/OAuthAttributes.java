@@ -16,16 +16,16 @@ public class OAuthAttributes {
     private String email;
     private String picture;
 
-    private String userName;
+    private String nickname;
 
     @Builder
-    public OAuthAttributes(Map<String,Object> attributes,String nameAttributeKey,String name,String email,String picture,String userName){
+    public OAuthAttributes(Map<String,Object> attributes,String nameAttributeKey,String name,String email,String picture,String nickname){
         this.attributes = attributes;
         this.nameAttributeKey = nameAttributeKey;
         this.name = name;
         this.email = email;
         this.picture = picture;
-        this.userName = userName;
+        this.nickname = nickname;
     }
 
     public static OAuthAttributes of(String registrationId,String userNameAttributeName,Map<String,Object> attributes){
@@ -42,7 +42,7 @@ public class OAuthAttributes {
                 .name((String) attributes.get("name"))
                 .email((String) attributes.get("email"))
                 .picture((String) attributes.get("picture"))
-                .userName((String) attributes.get("userName"))
+                .nickname((String) attributes.get("nickname"))
                 .attributes(attributes)
                 .nameAttributeKey(userNameAttributeName)
                 .build();
@@ -56,7 +56,7 @@ public class OAuthAttributes {
                 .name((String) response.get("name"))
                 .email((String) response.get("email"))
                 .picture((String) response.get("profile_image"))
-                .userName((String) response.get("userName"))
+                .nickname((String) response.get("nickname"))
                 .attributes(response)
                 .nameAttributeKey(userNameAttributeName)
                 .build();
@@ -67,7 +67,7 @@ public class OAuthAttributes {
                 .name(name)
                 .email(email)
                 .picture(picture)
-                .userName(userName)
+                .nickname(nickname)
                 .role(Role.USER)
                 .build();
     }
