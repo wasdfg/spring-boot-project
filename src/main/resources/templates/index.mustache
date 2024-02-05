@@ -19,7 +19,7 @@
         <!-- 시계 -->
         <div class="d-flex justify-content-end">
             <div>
-                <h2 class="makebold" style="font-size: 50px; margin-bottom: 10px;" id="clock">00:00</h2>
+                <h2 class="makebold" style="font-size: 50px; margin-bottom: 10px;" id="clock"></h2>
                 <script src="js/app/clock.js"></script>
             </div>
         </div>
@@ -34,6 +34,7 @@
             {{^LoginUserName}}
                 <a href="/oauth2/authorization/google" class="btn btn-success ml-2 active" role="button">Google 로그인</a>
                 <a href="/oauth2/authorization/naver" class="btn btn-secondary ml-2 active" role="button">Naver 로그인</a>
+
             {{/LoginUserName}}
         </div>
     </div>
