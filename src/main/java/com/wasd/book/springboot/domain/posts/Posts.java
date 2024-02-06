@@ -1,22 +1,19 @@
 package com.wasd.book.springboot.domain.posts;
 
 import com.wasd.book.springboot.domain.BaseTimeEntity;
+import com.wasd.book.springboot.domain.user.Users;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
 @Getter
 @NoArgsConstructor
 @Entity
 @DynamicUpdate
 public class Posts extends BaseTimeEntity{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,13 +24,17 @@ public class Posts extends BaseTimeEntity{
     @Column(columnDefinition = "TEXT",nullable = false)
     private String content;
 
-    private String author;
+    @ManyToOne
+    @JoinColumn(name="users_nickname")
+    private Users users;
 
     @Builder
-    public Posts(String title,String content,String author){
+    public Posts(String title,String content,Users users){
         this.title = title;
         this.content = content;
-        this.author = author;
+        if(users != null) {
+            this.users = users;
+        }
     }
 
     public void update(String title,String content){

@@ -1,17 +1,14 @@
 package com.wasd.book.springboot.domain.user;
 
 import com.wasd.book.springboot.domain.BaseTimeEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.wasd.book.springboot.domain.posts.Posts;
+import jakarta.persistence.*;
 
 import lombok.NoArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -32,6 +29,9 @@ public class Users extends BaseTimeEntity {
 
     @Column
     private String nickname;
+
+    @OneToMany(mappedBy = "users")
+    private List<Posts> postsList;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
