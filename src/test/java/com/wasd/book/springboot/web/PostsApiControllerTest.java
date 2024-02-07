@@ -70,7 +70,7 @@ public class PostsApiControllerTest {
         PostsSaveRequestDto requestDto = PostsSaveRequestDto.builder()
                 .title(title)
                 .content(content)
-                //.nickname("nickname")
+                .nickname("nickname")
                 .build();
 
         String url = "http://localhost:" + port + "/api/v1/posts";

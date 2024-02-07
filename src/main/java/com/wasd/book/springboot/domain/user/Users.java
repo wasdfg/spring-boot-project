@@ -30,7 +30,7 @@ public class Users extends BaseTimeEntity {
     @Column
     private String nickname;
 
-    @OneToMany(mappedBy = "users")
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
     private List<Posts> postsList;
 
     @Enumerated(EnumType.STRING)

@@ -24,7 +24,7 @@ public class Posts extends BaseTimeEntity{
     @Column(columnDefinition = "TEXT",nullable = false)
     private String content;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name="users_nickname")
     private Users users;
 
