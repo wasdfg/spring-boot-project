@@ -1,19 +1,30 @@
 # spring-boot-project
 ### 간단한 게시판을 만드는 프로젝트 입니다.
+--------
+#### 사용한 개발 스택
+<img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/></a>  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/></a>  <img src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white"/></a>  <img src="https://img.shields.io/badge/Amazon EC2-FF9900?style=flat-square&logo=amazonec2&logoColor=white"/></a>  <img src="https://img.shields.io/badge/Amazon RDS-527FFF?style=flat-square&logo=amazonrds&logoColor=white"/></a>  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/></a>
 
 
-
-
-
-
+---------
 웹 사이트 주소
 http://ec2-13-124-18-162.ap-northeast-2.compute.amazonaws.com:8080
 
+------
+
+
+
+
+
+<br><br><br><br><br><br>
+
+<br><br><br><br><br><br><br><br><br><br><br>
 스프링 부트 3.2.x 버전에서 구현하고 싶은 사람들의 에러 해결을 조금이라도 돕기 위해서 쓴 글
 
 spring boot 3.2.1
 using sdk 17
 gradle version 7.5.1
+
+
 ---------uploading-------------------
 
 사용하는 책 : 스프링 부트와 AWS로 혼자 구현하는 웹 서비스 
